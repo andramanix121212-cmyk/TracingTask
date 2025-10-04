@@ -5,7 +5,7 @@ Module Module1
 
         ' Program Instructions (addresses 0�5) 
         ' Opcodes: 1 = LOAD, 2 = ADD, 3 = STORE, 4 = JUMP, 0 = HALT
-        Memory(0) = 191   ' LOAD value at address 98 
+        Memory(0) = 198   ' LOAD value at address 98 
         Memory(1) = 291   ' ADD value at address 91
         Memory(2) = 398   ' STORE result in address 98 
         Memory(3) = 400   ' JUMP to address 0 (loop) 
