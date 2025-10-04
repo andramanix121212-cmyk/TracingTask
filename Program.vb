@@ -4,17 +4,17 @@ Module Module1
         Dim Memory(99) As Integer
 
         ' Program Instructions (addresses 0�5) 
-        ' Opcodes: 1 = LOAD, 2 = ADD, 3 = STORE, 4 = JUMP, 0 = HALT
+        ' Opcodes: 1 = LOAD, 2 = ADD, 3 = STORE, 4 = JUMP, 5 = SUBTRACT 0 = HALT
         Memory(0) = 198   ' LOAD value at address 98 
         Memory(1) = 291   ' ADD value at address 91
-        Memory(2) = 292   ' ADD value at address 92
+        Memory(2) = 592   ' SUBTRACT value at address 92
         Memory(3) = 398   ' STORE result in address 98 
         Memory(4) = 400   ' JUMP to address 0 (loop) 
         Memory(5) = 0     ' HALT 
 
         ' Data values stored in high memory (addresses 90+) 
         Memory(91) = 5
-        Memory(92) = 7
+        Memory(92) = 3
         Memory(98) = 0    ' Storage location 
 
         ' Registers 
@@ -53,8 +53,11 @@ Module Module1
                     Memory(operand) = ACC
                 Case 4 ' JUMP 
                     PC = operand
+                Case 5 ' SUBTRACT
+                    ACC -= Memory(operand)
                 Case 0 ' HALT 
                     running = False
+
             End Select
 
             ' OUTPUT REGISTERS FOR TRACING 
