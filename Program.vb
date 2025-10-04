@@ -7,12 +7,14 @@ Module Module1
         ' Opcodes: 1 = LOAD, 2 = ADD, 3 = STORE, 4 = JUMP, 0 = HALT
         Memory(0) = 198   ' LOAD value at address 98 
         Memory(1) = 291   ' ADD value at address 91
-        Memory(2) = 398   ' STORE result in address 98 
-        Memory(3) = 400   ' JUMP to address 0 (loop) 
-        Memory(4) = 0     ' HALT 
+        Memory(2) = 292   ' ADD value at address 92
+        Memory(3) = 398   ' STORE result in address 98 
+        Memory(4) = 400   ' JUMP to address 0 (loop) 
+        Memory(5) = 0     ' HALT 
 
         ' Data values stored in high memory (addresses 90+) 
         Memory(91) = 5
+        Memory(92) = 7
         Memory(98) = 0    ' Storage location 
 
         ' Registers 
